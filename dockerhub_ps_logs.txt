@@ -1,0 +1,331 @@
+>>>>>>>> Login to DockerHub:
+PS C:\Users\svemala\eclipse-workspace\subbu-case-study> docker login
+Authenticating with existing credentials...
+Login Succeeded
+
+>>>>>>>> List the Docker Images:
+PS C:\Users\svemala\eclipse-workspace\subbu-case-study> docker images
+REPOSITORY                                                          TAG                                              IMAGE ID            CREATED             SIZE
+subbudockerhub/subbu-casestudy-microservices-docker-dockerhub.jar   latest                                           ca813a46d63d        27 hours ago        646MB
+subbu-casestudy-microservices-docker.jar                            latest                                           e7554d59f74b        2 days ago          646MB
+<none>                                                              <none>                                           54538fc8948d        2 days ago          646MB
+microservicesdockerjar3.jar                                         latest                                           2eb634581cbb        3 days ago          636MB
+<none>                                                              <none>                                           e41c35024224        3 days ago          636MB
+<none>                                                              <none>                                           bfc7ead597e5        3 days ago          636MB
+openjdk                                                             11                                               455ecea6f4f2        3 days ago          627MB
+docker/desktop-storage-provisioner                                  v1.1                                             e704287ce753        5 months ago        41.8MB
+docker/desktop-vpnkit-controller                                    v1.0                                             79da37e5a3aa        6 months ago        36.6MB
+docker/desktop-kubernetes                                           kubernetes-v1.16.5-cni-v0.7.5-critools-v1.15.0   a86647f0b376        7 months ago        279MB
+k8s.gcr.io/kube-scheduler                                           v1.16.5                                          b4d073a9efda        7 months ago        83.5MB
+k8s.gcr.io/kube-apiserver                                           v1.16.5                                          fc838b21afbb        7 months ago        159MB
+k8s.gcr.io/kube-controller-manager                                  v1.16.5                                          441835dd2301        7 months ago        151MB
+k8s.gcr.io/kube-proxy                                               v1.16.5                                          0ee1b8a3ebe0        7 months ago        82.7MB
+docker/kube-compose-controller                                      v0.4.25-alpha1                                   129151cdf35f        10 months ago       35.6MB
+docker/kube-compose-api-server                                      v0.4.25-alpha1                                   989749268895        10 months ago       50.7MB
+docker/kube-compose-installer                                       v0.4.25-alpha1                                   2a71ac5a1359        10 months ago       42.3MB
+k8s.gcr.io/etcd                                                     3.3.15-0                                         b2756210eeab        12 months ago       247MB
+k8s.gcr.io/kube-proxy                                               v1.14.6                                          ed8adf767eeb        12 months ago       82.1MB
+k8s.gcr.io/kube-apiserver                                           v1.14.6                                          0e422c9884cf        12 months ago       209MB
+k8s.gcr.io/kube-controller-manager                                  v1.14.6                                          4bb274b1f2c3        12 months ago       157MB
+k8s.gcr.io/kube-scheduler                                           v1.14.6                                          d27987bc993e        12 months ago       81.6MB
+k8s.gcr.io/coredns                                                  1.6.2                                            bf261d157914        12 months ago       44.1MB
+docker/kube-compose-controller                                      v0.4.23                                          a8c3d87a58e7        15 months ago       35.3MB
+docker/kube-compose-api-server                                      v0.4.23                                          f3591b2cb223        15 months ago       49.9MB
+k8s.gcr.io/coredns                                                  1.3.1                                            eb516548c180        19 months ago       40.3MB
+k8s.gcr.io/etcd                                                     3.3.10                                           2c4adeb21b4f        21 months ago       258MB
+k8s.gcr.io/pause                                                    3.1                                              da86e6ba6ca1        2 years ago         742kB
+
+
+PS C:\Users\svemala\eclipse-workspace\subbu-case-study> docker rmi subbudockerhub/subbu-casestudy-microservices-docker-dockerhub.jar
+Error response from daemon: conflict: unable to remove repository reference "subbudockerhub/subbu-casestudy-microservices-docker-dockerhub.jar" (must force) - container 8ce9b5baff80 is using its referenced image ca813a46d63d
+
+>>>>>>>> Remove Docker Image - Untagged to the image, which is on Docker Hub
+PS C:\Users\svemala\eclipse-workspace\subbu-case-study> docker rmi -f subbudockerhub/subbu-casestudy-microservices-docker-dockerhub.jar
+Untagged: subbudockerhub/subbu-casestudy-microservices-docker-dockerhub.jar:latest
+Untagged: subbudockerhub/subbu-casestudy-microservices-docker-dockerhub.jar@sha256:a96fc0c8a1cc09a7391e0e659e062cf64dec43a45fa94b4ea9a64c5412862da5
+
+PS C:\Users\svemala\eclipse-workspace\subbu-case-study> docker images
+REPOSITORY                                 TAG                                              IMAGE ID            CREATED             SIZE
+<none>                                     <none>                                           ca813a46d63d        27 hours ago        646MB
+subbu-casestudy-microservices-docker.jar   latest                                           e7554d59f74b        2 days ago          646MB
+<none>                                     <none>                                           54538fc8948d        2 days ago          646MB
+microservicesdockerjar3.jar                latest                                           2eb634581cbb        3 days ago          636MB
+<none>                                     <none>                                           e41c35024224        3 days ago          636MB
+<none>                                     <none>                                           bfc7ead597e5        3 days ago          636MB
+openjdk                                    11                                               455ecea6f4f2        3 days ago          627MB
+docker/desktop-storage-provisioner         v1.1                                             e704287ce753        5 months ago        41.8MB
+docker/desktop-vpnkit-controller           v1.0                                             79da37e5a3aa        6 months ago        36.6MB
+docker/desktop-kubernetes                  kubernetes-v1.16.5-cni-v0.7.5-critools-v1.15.0   a86647f0b376        7 months ago        279MB
+k8s.gcr.io/kube-scheduler                  v1.16.5                                          b4d073a9efda        7 months ago        83.5MB
+k8s.gcr.io/kube-apiserver                  v1.16.5                                          fc838b21afbb        7 months ago        159MB
+k8s.gcr.io/kube-proxy                      v1.16.5                                          0ee1b8a3ebe0        7 months ago        82.7MB
+k8s.gcr.io/kube-controller-manager         v1.16.5                                          441835dd2301        7 months ago        151MB
+docker/kube-compose-controller             v0.4.25-alpha1                                   129151cdf35f        10 months ago       35.6MB
+docker/kube-compose-api-server             v0.4.25-alpha1                                   989749268895        10 months ago       50.7MB
+docker/kube-compose-installer              v0.4.25-alpha1                                   2a71ac5a1359        10 months ago       42.3MB
+k8s.gcr.io/etcd                            3.3.15-0                                         b2756210eeab        12 months ago       247MB
+k8s.gcr.io/kube-proxy                      v1.14.6                                          ed8adf767eeb        12 months ago       82.1MB
+k8s.gcr.io/kube-apiserver                  v1.14.6                                          0e422c9884cf        12 months ago       209MB
+k8s.gcr.io/kube-scheduler                  v1.14.6                                          d27987bc993e        12 months ago       81.6MB
+k8s.gcr.io/kube-controller-manager         v1.14.6                                          4bb274b1f2c3        12 months ago       157MB
+k8s.gcr.io/coredns                         1.6.2                                            bf261d157914        12 months ago       44.1MB
+docker/kube-compose-controller             v0.4.23                                          a8c3d87a58e7        15 months ago       35.3MB
+docker/kube-compose-api-server             v0.4.23                                          f3591b2cb223        15 months ago       49.9MB
+k8s.gcr.io/coredns                         1.3.1                                            eb516548c180        19 months ago       40.3MB
+k8s.gcr.io/etcd                            3.3.10                                           2c4adeb21b4f        21 months ago       258MB
+k8s.gcr.io/pause                           3.1                                              da86e6ba6ca1        2 years ago         742kB
+
+>>>>>>>> Remove Docker container:
+PS C:\Users\svemala\eclipse-workspace\subbu-case-study> docker rm subbudockerhub/subbu-casestudy-microservices-docker-dockerhub.jar
+Error: No such container: subbudockerhub/subbu-casestudy-microservices-docker-dockerhub.jar
+
+PS C:\Users\svemala\eclipse-workspace\subbu-case-study> docker ps
+CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS                    NAMES
+8ce9b5baff80        ca813a46d63d           "java -jar /subbu-ca…"   7 hours ago         Up 7 hours          0.0.0.0:9092->8080/tcp   romantic_chatelet
+bc0577ff8218        e704287ce753           "/storage-provisione…"   8 hours ago         Up 8 hours                                   k8s_storage-provisioner_storage-provisioner_kube-system_cf41569a-33ac-4693-be2a-1e673e45ebba_1
+207af9a03171        129151cdf35f           "/compose-controller…"   8 hours ago         Up 8 hours                                   k8s_compose_compose-78f95d4f8c-j4lhk_docker_e5bb9b12-338d-4f4e-99a0-973ece0f631d_0
+2f79e91be7bb        989749268895           "/api-server --kubec…"   8 hours ago         Up 8 hours                                   k8s_compose_compose-api-6ffb89dc58-96w7k_docker_faed47b7-753f-4acf-a61f-b4e6976c97d3_0
+3809e0ba72bd        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_compose-api-6ffb89dc58-96w7k_docker_faed47b7-753f-4acf-a61f-b4e6976c97d3_0
+45d2eced6065        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_compose-78f95d4f8c-j4lhk_docker_e5bb9b12-338d-4f4e-99a0-973ece0f631d_0
+a75dc0ad5f1e        79da37e5a3aa           "/kube-vpnkit-forwar…"   8 hours ago         Up 8 hours                                   k8s_vpnkit-controller_vpnkit-controller_kube-system_a9ab932e-b5df-4426-8ed5-478bf96302ba_0
+6cafe67623bc        0ee1b8a3ebe0           "/usr/local/bin/kube…"   8 hours ago         Up 8 hours                                   k8s_kube-proxy_kube-proxy-g4v94_kube-system_69795b23-d199-4265-8998-a24f3aaf69b4_0
+8e963f4afd11        bf261d157914           "/coredns -conf /etc…"   8 hours ago         Up 8 hours                                   k8s_coredns_coredns-5644d7b6d9-85fz6_kube-system_8da76ca1-bc13-4a95-90ac-330cad6f6d20_0
+695dd414cfea        bf261d157914           "/coredns -conf /etc…"   8 hours ago         Up 8 hours                                   k8s_coredns_coredns-5644d7b6d9-zv6m4_kube-system_48269134-3fbc-4a5c-8f10-f671e07917cd_0
+3dd343f7638e        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_kube-proxy-g4v94_kube-system_69795b23-d199-4265-8998-a24f3aaf69b4_0
+d7e1382b6256        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_vpnkit-controller_kube-system_a9ab932e-b5df-4426-8ed5-478bf96302ba_0
+6e3bd97ccaa2        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_storage-provisioner_kube-system_cf41569a-33ac-4693-be2a-1e673e45ebba_0
+f39667db539d        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_coredns-5644d7b6d9-85fz6_kube-system_8da76ca1-bc13-4a95-90ac-330cad6f6d20_0
+76a1276ee04a        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_coredns-5644d7b6d9-zv6m4_kube-system_48269134-3fbc-4a5c-8f10-f671e07917cd_0
+dae32fe83ded        441835dd2301           "kube-controller-man…"   8 hours ago         Up 8 hours                                   k8s_kube-controller-manager_kube-controller-manager-docker-desktop_kube-system_9076958db0c2cc26f76def745bfc1928_0
+9fc8186dd81b        fc838b21afbb           "kube-apiserver --ad…"   8 hours ago         Up 8 hours                                   k8s_kube-apiserver_kube-apiserver-docker-desktop_kube-system_2966bdea771eade42b079889c75cf17e_0
+b38aa9f65fd9        b2756210eeab           "etcd --advertise-cl…"   8 hours ago         Up 8 hours                                   k8s_etcd_etcd-docker-desktop_kube-system_bc3eca0122540ccc59e959a7805e87e8_0
+a67af3bf05ba        b4d073a9efda           "kube-scheduler --au…"   8 hours ago         Up 8 hours                                   k8s_kube-scheduler_kube-scheduler-docker-desktop_kube-system_28dd1b1230fbe15350eb1b896ae9493d_0
+60e0a69f4632        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_kube-scheduler-docker-desktop_kube-system_28dd1b1230fbe15350eb1b896ae9493d_0
+ebb56f307d5a        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_kube-controller-manager-docker-desktop_kube-system_9076958db0c2cc26f76def745bfc1928_0
+2f337e316cf5        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_kube-apiserver-docker-desktop_kube-system_2966bdea771eade42b079889c75cf17e_0
+7b54c9c4836f        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_etcd-docker-desktop_kube-system_bc3eca0122540ccc59e959a7805e87e8_0
+
+PS C:\Users\svemala\eclipse-workspace\subbu-case-study> docker rm 8ce9b5baff80
+Error response from daemon: You cannot remove a running container 8ce9b5baff80a0f83b482c0fedcae17c41df87dfc2257f59b6e8f48d38207f09. Stop the container before attempting removal or force remove
+
+PS C:\Users\svemala\eclipse-workspace\subbu-case-study> docker rm -f 8ce9b5baff80
+8ce9b5baff80
+
+PS C:\Users\svemala\eclipse-workspace\subbu-case-study> docker ps
+CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS               NAMES
+bc0577ff8218        e704287ce753           "/storage-provisione…"   8 hours ago         Up 8 hours                              k8s_storage-provisioner_storage-provisioner_kube-system_cf41569a-33ac-4693-be2a-1e673e45ebba_1
+207af9a03171        129151cdf35f           "/compose-controller…"   8 hours ago         Up 8 hours                              k8s_compose_compose-78f95d4f8c-j4lhk_docker_e5bb9b12-338d-4f4e-99a0-973ece0f631d_0
+2f79e91be7bb        989749268895           "/api-server --kubec…"   8 hours ago         Up 8 hours                              k8s_compose_compose-api-6ffb89dc58-96w7k_docker_faed47b7-753f-4acf-a61f-b4e6976c97d3_0
+3809e0ba72bd        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                              k8s_POD_compose-api-6ffb89dc58-96w7k_docker_faed47b7-753f-4acf-a61f-b4e6976c97d3_0
+45d2eced6065        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                              k8s_POD_compose-78f95d4f8c-j4lhk_docker_e5bb9b12-338d-4f4e-99a0-973ece0f631d_0
+a75dc0ad5f1e        79da37e5a3aa           "/kube-vpnkit-forwar…"   8 hours ago         Up 8 hours                              k8s_vpnkit-controller_vpnkit-controller_kube-system_a9ab932e-b5df-4426-8ed5-478bf96302ba_0
+6cafe67623bc        0ee1b8a3ebe0           "/usr/local/bin/kube…"   8 hours ago         Up 8 hours                              k8s_kube-proxy_kube-proxy-g4v94_kube-system_69795b23-d199-4265-8998-a24f3aaf69b4_0
+8e963f4afd11        bf261d157914           "/coredns -conf /etc…"   8 hours ago         Up 8 hours                              k8s_coredns_coredns-5644d7b6d9-85fz6_kube-system_8da76ca1-bc13-4a95-90ac-330cad6f6d20_0
+695dd414cfea        bf261d157914           "/coredns -conf /etc…"   8 hours ago         Up 8 hours                              k8s_coredns_coredns-5644d7b6d9-zv6m4_kube-system_48269134-3fbc-4a5c-8f10-f671e07917cd_0
+3dd343f7638e        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                              k8s_POD_kube-proxy-g4v94_kube-system_69795b23-d199-4265-8998-a24f3aaf69b4_0
+d7e1382b6256        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                              k8s_POD_vpnkit-controller_kube-system_a9ab932e-b5df-4426-8ed5-478bf96302ba_0
+6e3bd97ccaa2        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                              k8s_POD_storage-provisioner_kube-system_cf41569a-33ac-4693-be2a-1e673e45ebba_0
+f39667db539d        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                              k8s_POD_coredns-5644d7b6d9-85fz6_kube-system_8da76ca1-bc13-4a95-90ac-330cad6f6d20_0
+76a1276ee04a        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                              k8s_POD_coredns-5644d7b6d9-zv6m4_kube-system_48269134-3fbc-4a5c-8f10-f671e07917cd_0
+dae32fe83ded        441835dd2301           "kube-controller-man…"   8 hours ago         Up 8 hours                              k8s_kube-controller-manager_kube-controller-manager-docker-desktop_kube-system_9076958db0c2cc26f76def745bfc1928_0
+9fc8186dd81b        fc838b21afbb           "kube-apiserver --ad…"   8 hours ago         Up 8 hours                              k8s_kube-apiserver_kube-apiserver-docker-desktop_kube-system_2966bdea771eade42b079889c75cf17e_0
+b38aa9f65fd9        b2756210eeab           "etcd --advertise-cl…"   8 hours ago         Up 8 hours                              k8s_etcd_etcd-docker-desktop_kube-system_bc3eca0122540ccc59e959a7805e87e8_0
+a67af3bf05ba        b4d073a9efda           "kube-scheduler --au…"   8 hours ago         Up 8 hours                              k8s_kube-scheduler_kube-scheduler-docker-desktop_kube-system_28dd1b1230fbe15350eb1b896ae9493d_0
+60e0a69f4632        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                              k8s_POD_kube-scheduler-docker-desktop_kube-system_28dd1b1230fbe15350eb1b896ae9493d_0
+ebb56f307d5a        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                              k8s_POD_kube-controller-manager-docker-desktop_kube-system_9076958db0c2cc26f76def745bfc1928_0
+2f337e316cf5        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                              k8s_POD_kube-apiserver-docker-desktop_kube-system_2966bdea771eade42b079889c75cf17e_0
+7b54c9c4836f        k8s.gcr.io/pause:3.1   "/pause"                 8 hours ago         Up 8 hours                              k8s_POD_etcd-docker-desktop_kube-system_bc3eca0122540ccc59e959a7805e87e8_0
+
+PS C:\Users\svemala\eclipse-workspace\subbu-case-study> docker images
+REPOSITORY                                 TAG                                              IMAGE ID            CREATED             SIZE
+<none>                                     <none>                                           ca813a46d63d        28 hours ago        646MB
+subbu-casestudy-microservices-docker.jar   latest                                           e7554d59f74b        2 days ago          646MB
+<none>                                     <none>                                           54538fc8948d        2 days ago          646MB
+microservicesdockerjar3.jar                latest                                           2eb634581cbb        3 days ago          636MB
+<none>                                     <none>                                           e41c35024224        3 days ago          636MB
+<none>                                     <none>                                           bfc7ead597e5        3 days ago          636MB
+openjdk                                    11                                               455ecea6f4f2        3 days ago          627MB
+docker/desktop-storage-provisioner         v1.1                                             e704287ce753        5 months ago        41.8MB
+docker/desktop-vpnkit-controller           v1.0                                             79da37e5a3aa        6 months ago        36.6MB
+docker/desktop-kubernetes                  kubernetes-v1.16.5-cni-v0.7.5-critools-v1.15.0   a86647f0b376        7 months ago        279MB
+k8s.gcr.io/kube-proxy                      v1.16.5                                          0ee1b8a3ebe0        7 months ago        82.7MB
+k8s.gcr.io/kube-scheduler                  v1.16.5                                          b4d073a9efda        7 months ago        83.5MB
+k8s.gcr.io/kube-controller-manager         v1.16.5                                          441835dd2301        7 months ago        151MB
+k8s.gcr.io/kube-apiserver                  v1.16.5                                          fc838b21afbb        7 months ago        159MB
+docker/kube-compose-controller             v0.4.25-alpha1                                   129151cdf35f        10 months ago       35.6MB
+docker/kube-compose-api-server             v0.4.25-alpha1                                   989749268895        10 months ago       50.7MB
+docker/kube-compose-installer              v0.4.25-alpha1                                   2a71ac5a1359        10 months ago       42.3MB
+k8s.gcr.io/etcd                            3.3.15-0                                         b2756210eeab        12 months ago       247MB
+k8s.gcr.io/kube-proxy                      v1.14.6                                          ed8adf767eeb        12 months ago       82.1MB
+k8s.gcr.io/kube-apiserver                  v1.14.6                                          0e422c9884cf        12 months ago       209MB
+k8s.gcr.io/kube-controller-manager         v1.14.6                                          4bb274b1f2c3        12 months ago       157MB
+k8s.gcr.io/kube-scheduler                  v1.14.6                                          d27987bc993e        12 months ago       81.6MB
+k8s.gcr.io/coredns                         1.6.2                                            bf261d157914        12 months ago       44.1MB
+docker/kube-compose-controller             v0.4.23                                          a8c3d87a58e7        15 months ago       35.3MB
+docker/kube-compose-api-server             v0.4.23                                          f3591b2cb223        15 months ago       49.9MB
+k8s.gcr.io/coredns                         1.3.1                                            eb516548c180        19 months ago       40.3MB
+k8s.gcr.io/etcd                            3.3.10                                           2c4adeb21b4f        21 months ago       258MB
+k8s.gcr.io/pause                           3.1                                              da86e6ba6ca1        2 years ago         742kB
+
+>>>>>>>> Image "subbudockerhub/subbu-casestudy-microservices-docker-dockerhub.jar" already pushed into the dockerhub, and can be ran directly.
+PS C:\Users\svemala\eclipse-workspace\subbu-case-study> docker run -p 9092:8080 subbudockerhub/subbu-casestudy-microservices-docker-dockerhub.jar
+Unable to find image 'subbudockerhub/subbu-casestudy-microservices-docker-dockerhub.jar:latest' locally
+latest: Pulling from subbudockerhub/subbu-casestudy-microservices-docker-dockerhub.jar
+Digest: sha256:a96fc0c8a1cc09a7391e0e659e062cf64dec43a45fa94b4ea9a64c5412862da5
+Status: Downloaded newer image for subbudockerhub/subbu-casestudy-microservices-docker-dockerhub.jar:latest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.3.RELEASE)
+
+2020-09-04 12:56:32.671  INFO 1 --- [           main] com.subbu.SubbuCaseStudyApplication      : Starting SubbuCaseStudyApplication v0.0.1-SNAPSHOT on fe43456dab5e with PID 1 (/subbu-casestudy-microservices-docker-dockerhub.jar started by root in /)
+2020-09-04 12:56:32.681  INFO 1 --- [           main] com.subbu.SubbuCaseStudyApplication      : No active profile set, falling back to default profiles: default
+2020-09-04 12:56:34.607  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-09-04 12:56:34.627  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-04 12:56:34.627  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-04 12:56:34.716  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-04 12:56:34.716  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1867 ms
+2020-09-04 12:56:35.174  INFO 1 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-04 12:56:35.455  INFO 1 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-09-04 12:56:35.515  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-04 12:56:35.545  INFO 1 --- [           main] com.subbu.SubbuCaseStudyApplication      : Started SubbuCaseStudyApplication in 3.847 seconds (JVM running for 4.642)
+Welcome to Subbu - this message will appear in the Console
+
+>>>>>>> Ctrl+C -> To Kill the session:
+
+2020-09-04 12:58:45.051  INFO 1 --- [nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-04 12:58:45.054  INFO 1 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-04 12:58:45.073  INFO 1 --- [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
+
+>>>>>>>> A local copy of the "subbudockerhub/subbu-casestudy-microservices-docker-dockerhub.jar" image will be created again:
+PS C:\Users\svemala\eclipse-workspace\subbu-case-study> docker images
+REPOSITORY                                                          TAG                                              IMAGE ID            CREATED             SIZE
+subbudockerhub/subbu-casestudy-microservices-docker-dockerhub.jar   latest                                           ca813a46d63d        28 hours ago        646MB
+subbu-casestudy-microservices-docker.jar                            latest                                           e7554d59f74b        2 days ago          646MB
+<none>                                                              <none>                                           54538fc8948d        2 days ago          646MB
+microservicesdockerjar3.jar                                         latest                                           2eb634581cbb        3 days ago          636MB
+<none>                                                              <none>                                           e41c35024224        3 days ago          636MB
+<none>                                                              <none>                                           bfc7ead597e5        3 days ago          636MB
+openjdk                                                             11                                               455ecea6f4f2        3 days ago          627MB
+docker/desktop-storage-provisioner                                  v1.1                                             e704287ce753        5 months ago        41.8MB
+docker/desktop-vpnkit-controller                                    v1.0                                             79da37e5a3aa        6 months ago        36.6MB
+docker/desktop-kubernetes                                           kubernetes-v1.16.5-cni-v0.7.5-critools-v1.15.0   a86647f0b376        7 months ago        279MB
+k8s.gcr.io/kube-scheduler                                           v1.16.5                                          b4d073a9efda        7 months ago        83.5MB
+k8s.gcr.io/kube-controller-manager                                  v1.16.5                                          441835dd2301        7 months ago        151MB
+k8s.gcr.io/kube-apiserver                                           v1.16.5                                          fc838b21afbb        7 months ago        159MB
+k8s.gcr.io/kube-proxy                                               v1.16.5                                          0ee1b8a3ebe0        7 months ago        82.7MB
+docker/kube-compose-controller                                      v0.4.25-alpha1                                   129151cdf35f        10 months ago       35.6MB
+docker/kube-compose-api-server                                      v0.4.25-alpha1                                   989749268895        10 months ago       50.7MB
+docker/kube-compose-installer                                       v0.4.25-alpha1                                   2a71ac5a1359        10 months ago       42.3MB
+k8s.gcr.io/etcd                                                     3.3.15-0                                         b2756210eeab        12 months ago       247MB
+k8s.gcr.io/kube-proxy                                               v1.14.6                                          ed8adf767eeb        12 months ago       82.1MB
+k8s.gcr.io/kube-apiserver                                           v1.14.6                                          0e422c9884cf        12 months ago       209MB
+k8s.gcr.io/kube-controller-manager                                  v1.14.6                                          4bb274b1f2c3        12 months ago       157MB
+k8s.gcr.io/kube-scheduler                                           v1.14.6                                          d27987bc993e        12 months ago       81.6MB
+k8s.gcr.io/coredns                                                  1.6.2                                            bf261d157914        12 months ago       44.1MB
+docker/kube-compose-controller                                      v0.4.23                                          a8c3d87a58e7        15 months ago       35.3MB
+docker/kube-compose-api-server                                      v0.4.23                                          f3591b2cb223        15 months ago       49.9MB
+k8s.gcr.io/coredns                                                  1.3.1                                            eb516548c180        19 months ago       40.3MB
+k8s.gcr.io/etcd                                                     3.3.10                                           2c4adeb21b4f        21 months ago       258MB
+k8s.gcr.io/pause                                                    3.1                                              da86e6ba6ca1        2 years ago         742kB
+
+PS C:\Users\svemala\eclipse-workspace\subbu-case-study> docker ps
+CONTAINER ID        IMAGE                                                               COMMAND                  CREATED             STATUS              PORTS                    NAMES
+fe43456dab5e        subbudockerhub/subbu-casestudy-microservices-docker-dockerhub.jar   "java -jar /subbu-ca…"   4 minutes ago       Up 4 minutes        0.0.0.0:9092->8080/tcp   gifted_ritchie
+bc0577ff8218        e704287ce753                                                        "/storage-provisione…"   8 hours ago         Up 8 hours                                   k8s_storage-provisioner_storage-provisioner_kube-system_cf41569a-33ac-4693-be2a-1e673e45ebba_1
+207af9a03171        129151cdf35f                                                        "/compose-controller…"   8 hours ago         Up 8 hours                                   k8s_compose_compose-78f95d4f8c-j4lhk_docker_e5bb9b12-338d-4f4e-99a0-973ece0f631d_0
+2f79e91be7bb        989749268895                                                        "/api-server --kubec…"   8 hours ago         Up 8 hours                                   k8s_compose_compose-api-6ffb89dc58-96w7k_docker_faed47b7-753f-4acf-a61f-b4e6976c97d3_0
+3809e0ba72bd        k8s.gcr.io/pause:3.1                                                "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_compose-api-6ffb89dc58-96w7k_docker_faed47b7-753f-4acf-a61f-b4e6976c97d3_0
+45d2eced6065        k8s.gcr.io/pause:3.1                                                "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_compose-78f95d4f8c-j4lhk_docker_e5bb9b12-338d-4f4e-99a0-973ece0f631d_0
+a75dc0ad5f1e        79da37e5a3aa                                                        "/kube-vpnkit-forwar…"   8 hours ago         Up 8 hours                                   k8s_vpnkit-controller_vpnkit-controller_kube-system_a9ab932e-b5df-4426-8ed5-478bf96302ba_0
+6cafe67623bc        0ee1b8a3ebe0                                                        "/usr/local/bin/kube…"   8 hours ago         Up 8 hours                                   k8s_kube-proxy_kube-proxy-g4v94_kube-system_69795b23-d199-4265-8998-a24f3aaf69b4_0
+8e963f4afd11        bf261d157914                                                        "/coredns -conf /etc…"   8 hours ago         Up 8 hours                                   k8s_coredns_coredns-5644d7b6d9-85fz6_kube-system_8da76ca1-bc13-4a95-90ac-330cad6f6d20_0
+695dd414cfea        bf261d157914                                                        "/coredns -conf /etc…"   8 hours ago         Up 8 hours                                   k8s_coredns_coredns-5644d7b6d9-zv6m4_kube-system_48269134-3fbc-4a5c-8f10-f671e07917cd_0
+3dd343f7638e        k8s.gcr.io/pause:3.1                                                "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_kube-proxy-g4v94_kube-system_69795b23-d199-4265-8998-a24f3aaf69b4_0
+d7e1382b6256        k8s.gcr.io/pause:3.1                                                "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_vpnkit-controller_kube-system_a9ab932e-b5df-4426-8ed5-478bf96302ba_0
+6e3bd97ccaa2        k8s.gcr.io/pause:3.1                                                "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_storage-provisioner_kube-system_cf41569a-33ac-4693-be2a-1e673e45ebba_0
+f39667db539d        k8s.gcr.io/pause:3.1                                                "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_coredns-5644d7b6d9-85fz6_kube-system_8da76ca1-bc13-4a95-90ac-330cad6f6d20_0
+76a1276ee04a        k8s.gcr.io/pause:3.1                                                "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_coredns-5644d7b6d9-zv6m4_kube-system_48269134-3fbc-4a5c-8f10-f671e07917cd_0
+dae32fe83ded        441835dd2301                                                        "kube-controller-man…"   8 hours ago         Up 8 hours                                   k8s_kube-controller-manager_kube-controller-manager-docker-desktop_kube-system_9076958db0c2cc26f76def745bfc1928_0
+9fc8186dd81b        fc838b21afbb                                                        "kube-apiserver --ad…"   8 hours ago         Up 8 hours                                   k8s_kube-apiserver_kube-apiserver-docker-desktop_kube-system_2966bdea771eade42b079889c75cf17e_0
+b38aa9f65fd9        b2756210eeab                                                        "etcd --advertise-cl…"   8 hours ago         Up 8 hours                                   k8s_etcd_etcd-docker-desktop_kube-system_bc3eca0122540ccc59e959a7805e87e8_0
+a67af3bf05ba        b4d073a9efda                                                        "kube-scheduler --au…"   8 hours ago         Up 8 hours                                   k8s_kube-scheduler_kube-scheduler-docker-desktop_kube-system_28dd1b1230fbe15350eb1b896ae9493d_0
+60e0a69f4632        k8s.gcr.io/pause:3.1                                                "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_kube-scheduler-docker-desktop_kube-system_28dd1b1230fbe15350eb1b896ae9493d_0
+ebb56f307d5a        k8s.gcr.io/pause:3.1                                                "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_kube-controller-manager-docker-desktop_kube-system_9076958db0c2cc26f76def745bfc1928_0
+2f337e316cf5        k8s.gcr.io/pause:3.1                                                "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_kube-apiserver-docker-desktop_kube-system_2966bdea771eade42b079889c75cf17e_0
+7b54c9c4836f        k8s.gcr.io/pause:3.1                                                "/pause"                 8 hours ago         Up 8 hours                                   k8s_POD_etcd-docker-desktop_kube-system_bc3eca0122540ccc59e959a7805e87e8_0
+
+PS C:\Users\svemala\eclipse-workspace\subbu-case-study>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
