@@ -10,10 +10,13 @@ Detailed logs also enclosed in the Repo "subbugh/java-microservices-springboot-d
 
 Detailed code is cheked-in in the branch "subbugh/java-microservices-springboot-docker-dockerhub".
 
-This Repo, involves mainly three stages as below.
-A.Microservicesproject Implementation and deployment steps.
-B.Dockerdeployment steps.
-C.DockerHubdeployment steps.
+This Repo, involves mainly three stages as below:
+-------------------------------------------------
+A.Microservicesproject Implementation and deployment steps. 
+
+B.Dockerdeployment steps. 
+
+C.DockerHubdeployment steps. 
 
 Target Audience:
 ----------------
