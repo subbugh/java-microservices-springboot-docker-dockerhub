@@ -20,9 +20,13 @@ All, with knowledge of Java or coding and Containerization.
 
 Artifacts needed:
 1.JDK11
+
 2.Eclipse –IDE
+
 3.DockerDesktop installation.
-4.DockerHub Repository (Create an account repository on https://hub.docker.com/) -
+
+4.DockerHub Repository (Create an account repository on https://hub.docker.com/).
+
 5.Internet
 
 Please refer to the same.
