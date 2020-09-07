@@ -30,5 +30,3 @@ Artifacts needed:
 4.DockerHub Repository (Create an account repository on https://hub.docker.com/).
 
 5.Internet
-
-Please refer to the same.
